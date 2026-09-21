@@ -8,7 +8,7 @@
 static SJson* _powerupsJson = NULL;
 static SJson* _powerupDefs = NULL;
 
-void powerups_close();
+void powerups_close(void);
 
 void powerups_initialize(const char* filename)
 {
@@ -35,7 +35,7 @@ void powerups_initialize(const char* filename)
 	atexit(powerups_close);
 }
 
-void powerups_close()
+void powerups_close(void)
 {
 	if (_powerupsJson)
 	{
