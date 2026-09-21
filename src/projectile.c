@@ -33,7 +33,7 @@ Entity* projectile_new(GFC_Vector2D position, GFC_Vector2D direction, float spee
 	self->type = ENTITY_TYPE_PROJECTILE;
 	self->think = projectile_think;
 	self->update = projectile_update;
-	self->free = projectile_free;
+	self->data = projectile_free;
 
 	self->scale = gfc_vector2d(3.0f, 3.0f);
 

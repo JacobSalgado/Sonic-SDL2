@@ -15,6 +15,9 @@
 #include "speedpad.h"
 #include "enemy_spawn.h"
 
+extern void spawn_fly_enemy(float x, float y);
+extern void spawn_turret_enemy(float x,float y ,Entity* player);
+
 void world_tile_layer_build(World* world)
 {
 	int i, j;

@@ -1,6 +1,8 @@
 #include <stddef.h>
+#include <stdlib.h>
 #include "simple_logger.h"
 
+#include "gfc_text.h"
 #include "powerups.h"
 
 static SJson* _powerupsJson = NULL;

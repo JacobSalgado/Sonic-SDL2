@@ -5,10 +5,10 @@
 
 #include "audio.h"
 
-typedef enum
+/*typedef enum
 {
 
-};
+};*/
 
 typedef struct
 {

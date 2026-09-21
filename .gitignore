@@ -66,4 +66,18 @@ x64/
 # temp files
 *.user
 
+# make
 makefile.dep
+
+# cache
+.cache/
+src/.cache
+
+# compile_commands.json
+compile_commands.json
+src/compile_commands.json
+
+# kate-related
+src/.fly-enemy.cpp.kate-swp
+src/.world.c.kate-swp
+src/.fly_enemy.cpp.kate-swp

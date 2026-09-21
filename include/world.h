@@ -9,6 +9,9 @@
 struct Entity_S;
 typedef struct Entity_S Entity;
 
+extern void spawn_fly_enemy(float x, float y);
+extern void spawn_turret_enemy(float x,float y ,Entity* player);
+
 typedef enum {
 	TERRAIN_SOLID = 0,
 	TERRAIN_ONEWAY = 1,

@@ -43,7 +43,7 @@ int    __DebugMode = 0;
 void gf2d_graphics_close();
 
 void gf2d_graphics_initialize(
-    char *windowName,
+    const char *windowName,
     int viewWidth,
     int viewHeight,
     int renderWidth,

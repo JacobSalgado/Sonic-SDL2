@@ -276,7 +276,7 @@ void Player::handle_input(SDL_Event* event)
 	}
 }
 
-extern "C" int player_is_jumping(Entity* player)
+int player_is_jumping(Entity* player)
 {
 	if (!player || !player->data) return 0;
 	Player* self = (Player*)player->data;

@@ -3,10 +3,10 @@
 
 #include "gfc_audio.h"
 
-typedef enum
+/*typedef enum
 {
 	
-}AudioType;
+}AudioType;*/
 
 extern int volume;
 

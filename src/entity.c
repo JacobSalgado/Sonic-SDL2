@@ -14,7 +14,7 @@ typedef struct
 	Uint32	entity_max;
 }EntityManager;
 
-void entity_system_close();
+void entity_system_close(void);
 
 static EntityManager _entity_manager = { 0 }; /**<initialize a LOCAL global entity manager*/
 static World* _active_world = NULL;
@@ -26,7 +26,7 @@ void entity_set_player(Entity* player)
 	_player = player;
 }
 
-Entity* entity_get_player()
+Entity* entity_get_player(void)
 {
 	return _player;
 }
@@ -148,7 +148,7 @@ void entity_think(Entity* self)
 	if (self->think)self->think(self);
 }
 
-void entity_system_think()
+void entity_system_think(void)
 {
 	int i;
 	for (i = 0; i < _entity_manager.entity_max; i++)
@@ -179,7 +179,7 @@ void entity_update(Entity* self)
 	}
 }
 
-void entity_system_update()
+void entity_system_update(void)
 {
 	int i;
 	for (i = 0; i < _entity_manager.entity_max; i++)
@@ -211,7 +211,7 @@ void entity_draw(Entity* self)
 	}
 }
 
-void entity_system_draw()
+void entity_system_draw(void)
 {
 	int i;
 	for (i = 0; i < _entity_manager.entity_max; i++)
@@ -286,7 +286,7 @@ int enemy_collide_check(Entity* player)
 	return 0;
 }
 
-Uint32 entity_system_get_max()
+Uint32 entity_system_get_max(void)
 {
 	return _entity_manager.entity_max;
 }

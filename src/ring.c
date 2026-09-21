@@ -190,7 +190,7 @@ void ring_update(Entity* ring)
 void ring_destroy(Entity* ring)
 {
 	if (!ring) return;
-	gf2d_sprite_delete(ring);
+	gf2d_sprite_delete(ring->sprite);
 }
 
 void ring_free(Entity* ring)

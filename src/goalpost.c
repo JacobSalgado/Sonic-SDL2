@@ -87,7 +87,7 @@ Entity* goalpost_new(float x, float y, const char* next_level)
 	self->type = ENTITY_TYPE_GOALPOST;
 	self->data = data;
 	self->think = goalpost_think;
-	self->free = goalpost_free; 
+	self->data = goalpost_free;
 
 	return self;
 }

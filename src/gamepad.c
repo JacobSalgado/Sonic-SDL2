@@ -1,9 +1,9 @@
-#include "simple_Logger.h"
+#include "simple_logger.h"
 
 #include "gamepad.h"
 
-static int xDirection = 0;
-static int yDirection = 0;
+int xDirection = 0;
+int yDirection = 0;
 
 void gamepad_init(SDL_GameController** controller)
 {
@@ -24,7 +24,7 @@ void gamepad_init(SDL_GameController** controller)
 
 	slog("%d controller[s] connected", SDL_NumJoysticks());
 
-	if (SDL_GameControllerGetType(controller) == SDL_CONTROLLER_TYPE_PS4)
+	if (SDL_GameControllerGetType(*controller) == SDL_CONTROLLER_TYPE_PS4)
 		slog("PS4 controller connected");
 }
 
@@ -32,12 +32,12 @@ void gamepad_close(SDL_GameController** controller)
 {
 	if (*controller)
 	{
-		SDL_GameControllerClose(controller);
+		SDL_GameControllerClose(*controller);
 		*controller = NULL;
 	}
 }
 
-void gamepad_cleanup()
+void gamepad_cleanup(void)
 {
 }
 
@@ -53,7 +53,7 @@ void gamepad_update(SDL_Event* event)
 			else if (event->caxis.value < -DEAD_ZONE)
 				xDirection = -1;
 			else
-				xDirection;
+				xDirection = 0;
 		}
 		// y-axis
 		if (event->caxis.axis == SDL_CONTROLLER_AXIS_LEFTY)
@@ -63,17 +63,17 @@ void gamepad_update(SDL_Event* event)
 			else if (event->caxis.value < -DEAD_ZONE)
 				yDirection = -1;
 			else
-				yDirection;
+				yDirection = 0;
 		}
 	}
 }
 
-int get_gamepad_x_direction()
+int get_gamepad_x_direction(void)
 {
 	return xDirection;
 }
 
-int get_gamepad_y_direction()
+int get_gamepad_y_direction(void)
 {
 	return yDirection;
 }
